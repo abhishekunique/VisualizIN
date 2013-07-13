@@ -95,7 +95,7 @@ $len=count($response);
 $pages=array();
 $name=array();
 $page_url=array();
-
+$counts=array();
  foreach ($response as $page_detail) {
       $pages[]=$page_detail['page_id'];
       $name[]=$page_detail['name'];
@@ -108,9 +108,30 @@ $page_url=array();
  $random=array();
   foreach ($rand_keys as $key) {
     # code...
+    $fp_query = " SELECT name from user where uid in (SELECT uid FROM page_fan WHERE uid IN (SELECT uid2 FROM friend WHERE uid1=me()) AND page_id=".$response[$key]['page_id'].")";
+    $friends = $facebook -> api (array(
+      'method' => 'fql.query',
+      'query' => $fp_query, 
+      ));
+    $counts[$key]=count($friends);
     $random[]=$response[$key]['name'];
+    echo $counts[$key]."<br/>";
   }
   
+ arsort($counts);
+ $pages_final=array();
+
+ var $i=0;
+ foreach(array_keys($count) as $key )
+ {
+
+   $pages_final[]=array();
+
+
+ }
+
+
+
  ?>
 
 
