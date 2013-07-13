@@ -121,7 +121,7 @@ $page_url=array();
 
 
  ?>
-
+<div id="viz"></div>
 <script type="text/javascript">
 
   var jArray = <?php echo json_encode($pages ); ?>;
@@ -129,10 +129,8 @@ $page_url=array();
     console.log(jArray[i]);
   }
 
-</script>
-<div id="viz"></div>
-    <script type="text/javascript">
-        
+
+
     i = 0;
     
   
@@ -214,7 +212,7 @@ function generate_circles(namelist, xcenter, ycenter, centertext){
                     j++;
                 }
                 currentcircles=[];
-                generate_circles([1,1,1,1,1,1], 800, 500, "ME");
+                generate_circles(jArray, 800, 500, "ME");
                 d3.select(this).remove();   
             });
         });
@@ -253,7 +251,7 @@ function generate_circles(namelist, xcenter, ycenter, centertext){
 }
 
 
-generate_circles([1,1,1,1,1,1],800,500, "ME")
+generate_circles(jArray,800,500, "ME")
     </script>
 
   </body>
