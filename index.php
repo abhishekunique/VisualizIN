@@ -92,7 +92,7 @@ if ($user) {
  echo "<br /><br /><br />";
 echo  $response[0];
  echo "<br /><br /><br />";
-forreach( $response[0] as $key => $value)
+foreach( $response[0] as $key => $value)
 {
   echo $key;
 }
