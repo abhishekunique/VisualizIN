@@ -186,7 +186,7 @@ function generate_circles(namelist, xcenter, ycenter, centertext){
 
                 j++;
             }
-            curcirc=d3.select(this).attr("i");
+            curcirc=d3.select(this).attr("id");
             curname=namelist[curcirc];
             echo(curname);
 
