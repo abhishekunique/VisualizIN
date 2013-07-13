@@ -139,7 +139,7 @@ var sampleSVG = d3.select("#viz")
 
 
 function generate_circles(namelist, xcenter, ycenter, centertext){
-    var curname = "";
+    var str = "";
     var curcirc = 0;
     dataset=[]
     for(i=0; i<namelist.length; i++){
@@ -190,6 +190,7 @@ function generate_circles(namelist, xcenter, ycenter, centertext){
             }
             curcirc=d3.select(this).attr("i");
             curname=namelist[curcirc];
+            str = curname
 
 
 
@@ -225,7 +226,7 @@ function generate_circles(namelist, xcenter, ycenter, centertext){
 } */
         window.setTimeout(null,1000);
         console.log(curname);
-        var url="pages.php?id="+curname;
+        var url="pages.php?id="+str;
          window.location.assign(url);
             
         });
