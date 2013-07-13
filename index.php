@@ -113,9 +113,9 @@ $counts=array();
       'method' => 'fql.query',
       'query' => $fp_query, 
       ));
-    echo $fp_query."<br/>";
+    echo count($friends)."<br/>";
 
-    
+
     $counts[$key]=count($friends);
     $random[]=$response[$key]['name'];
     echo $counts[$key]."<br/>";
