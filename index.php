@@ -86,21 +86,20 @@ if ($user) {
       'method' => 'fql.query',
       'query' => $like_query,));
 
+
+
+ var_dump($response);
+ echo "<br /><br /><br />";
+ var_dump(json_decode($response));
+ echo "<br /><br /><br />";
+ var_dump(json_decode($response,true));
  
-    var $decode= json_decode($response);
-    var $array=$decode->data[0];
-
-    foreach($key => $val)
-    {
-      echo "1";
-      echo $key;
-    }
-
- //$decoded = print_r($response);
  //echo $decoded;
  
 ?>
 
+
+<script 
 
   
 
