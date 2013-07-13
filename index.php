@@ -105,16 +105,17 @@ $page_url=array();
 
   $rand_keys=array_rand($pages,30);
 
+  print "<script> var jarray= new Array();"
   foreach ($rand_keys as $key) {
     # code...
 
-    print "<script>";
-    print 'var jsArray = ['.$pages[$key].']';
-    print '</script>';
+    print 'jarray.push(['.$pages[$key].'])';
+    
     $response[$key]['page_url'];
     //echo "<br/>";
 
   }
+  print '</script>';
 
  ?>
 
