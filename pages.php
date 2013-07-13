@@ -268,7 +268,17 @@ if(user)
 {
   getUrlVars()["name"]
   enerate_circles(pageid,jArray,800,500, getUrlVars()["name"]);
- }   </script>
+ }  
+function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        vars[key] = value;
+    });
+    return vars;
+}
+
+
+  </script>
 
   </body>
 </html>
