@@ -5,7 +5,7 @@
 echo "abc";
 require_once("facebook.php");
 $facebook = new Facebook(array(
-  'appId'  => getenv('api_key');,
+  'appId'  => getenv('api_key'),
   'secret' => getenv('api_secret'),
 ));
 
