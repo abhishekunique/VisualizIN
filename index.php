@@ -105,10 +105,12 @@ $page_url=array();
 
 
   $rand_keys=array_rand($name,30);
+  $rand_id=array();
  $random=array();
   foreach ($rand_keys as $key) {
     # code...
     $random[]=$response[$key]['name'];
+    $rand_id[]=$response[$key]['pages'];
   }
   
  ?>
@@ -119,9 +121,15 @@ $page_url=array();
 <script type="text/javascript">
 
   var jArray = <?php echo json_encode($random ); ?>;
+   var pageid = <?php echo json_encode($random ); ?>;
+
+  
+  pageid.length=10;
   jArray.length=10;
   for(var i=0;i<10;i++){
     console.log(jArray[i]);
+   console.log(pageid[i]);
+       
   }
 
   var user = <?php echo $user; ?>;
@@ -139,7 +147,7 @@ var sampleSVG = d3.select("#viz")
 
 
 
-function generate_circles(namelist, xcenter, ycenter, centertext){
+function generate_circles(idlist,namelist, xcenter, ycenter, centertext){
 
     dataset=[]
     for(i=0; i<namelist.length; i++){
@@ -176,7 +184,7 @@ function generate_circles(namelist, xcenter, ycenter, centertext){
             d3.select(this).attr("r", d3.select(this).attr("r")/2);
         }).on("click", function(){
             currentItem=d3.select(this).attr("id");
-            currname=namelist[parseInt(currentItem)];
+            currname=idlist[parseInt(currentItem)];
 
             console.log(currentItem);
             console.log(currname);
@@ -214,7 +222,7 @@ function generate_circles(namelist, xcenter, ycenter, centertext){
                     j++;
                 }
                 currentcircles=[];
-                generate_circles(jArray, 800, 500, "ME");
+                generate_circles(pageid,jArray, 800, 500, "ME");
                 d3.select(this).remove();   
             });
             console.log(currname);
@@ -254,7 +262,7 @@ function generate_circles(namelist, xcenter, ycenter, centertext){
     console.log(currentcircles);
 }
 if(user)
-  generate_circles(jArray,800,500, "ME");
+  generate_circles(pageid,jArray,800,500, "ME");
     </script>
 
   </body>
