@@ -1,7 +1,7 @@
 <html>
 
 <?php
-$var=$GET['curname'];
+$var=$POST['curname'];
 console.log($var);
 echo "VisializIN <br />";
 require_once("facebook.php");
