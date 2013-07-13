@@ -60,7 +60,7 @@ if ($user) {
     <?php else: ?>
       <div>
         Login using OAuth 2.0 handled by the PHP SDK:
-        <a href="<?php echo $loginUrl; ?>">Login with Facebook</a>
+        <a href="<?php echo $loginUrl; ?>" onclick>Login with Facebook</a>
       </div>
     <?php endif ?>
 
@@ -129,7 +129,7 @@ $page_url=array();
     console.log(jArray[i]);
   }
 
-
+  var user = <?php echo $user; ?>;
 
     i = 0;
     
@@ -249,9 +249,8 @@ function generate_circles(namelist, xcenter, ycenter, centertext){
 
     console.log(currentcircles);
 }
-
-
-generate_circles(jArray,800,500, "ME")
+if(user)
+  generate_circles(jArray,800,500, "ME");
     </script>
 
   </body>
