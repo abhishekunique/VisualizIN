@@ -101,7 +101,7 @@ $param123 = array(
   );       
 $queryresults = $facebook->api($param123);
 print_r($queryresults[0]);
-echo "<br /><br />"
+echo "<br /><br />";
 print_r($queryresults[1]);
 echo "<br /><br />";
 echo $_GET['id'];
