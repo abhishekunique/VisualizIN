@@ -95,6 +95,12 @@ $len=count($response);
 echo $len;
 
 
+ foreach ($response as $key => $value) {
+    echo $key;
+  echo $value;
+  } 
+
+
   $red = 3;
  
  //echo $decoded;
