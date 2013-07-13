@@ -90,13 +90,18 @@ if ($user) {
 
 // print_r($response);
  echo "<br /><br /><br />";
-echo  $response[0];
- echo "<br /><br /><br />";
-foreach( $response[1] as $key => $value)
+echo  $response[0]; 
+$len=count($response);
+echo $len;
+
+for( var i=0;i<$len;i++)
 {
-  echo $key ." Hello ";
+ foreach ($response[i] as $key => $value) {
+    echo $key ." Hello ";
   echo $value;
+  } 
 }
+
   $red = 3;
  
  //echo $decoded;
