@@ -251,7 +251,7 @@ function generate_circles(namelist, xcenter, ycenter, centertext){
 }
 
 
-//generate_circles(jArray,800,500, "ME")
+generate_circles(jArray,800,500, "ME")
     </script>
 
   </body>
