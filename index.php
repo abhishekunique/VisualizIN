@@ -90,9 +90,9 @@ if ($user) {
 
  print_r($response);
  echo "<br /><br /><br />";
- print_r($response['data']);
+$decoded = json_decode($response)
  echo "<br /><br /><br />";
- print_r(json_decode($response,true)['data']);
+ print_r($decoded['data']);
   
  
  //echo $decoded;
