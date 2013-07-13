@@ -56,7 +56,7 @@ if ($user) {
     <h1>VisualizIN</h1>
     <?php
      echo '<iframe src="http://www.facebook.com/plugins/fan.php?connections=100&id='.$_GET['id'].'" scrolling="no" frameborder="0" style="border:none; 
-overflow:hidden; height:1000px; width:1000px;" allowTransparency="true"></iframe>'
+overflow:hidden; height:500px; width:1000px;" allowTransparency="true"></iframe>'
     ?>
     <?php if ($user): ?>
       <!--<a href="<?php echo $logoutUrl; ?>">Logout</a>-->
