@@ -114,7 +114,7 @@ $counts=array();
       'method' => 'fql.query',
       'query' => $fp_query, 
       ));
-    echo count($friends)."<br/>";
+    echo count($friends[0])."<br/>";
 
 
     $counts[$key]=count($friends);
