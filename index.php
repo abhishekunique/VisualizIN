@@ -92,20 +92,31 @@ if ($user) {
  echo "<br /><br /><br />";
 echo  $response[0]; 
 $len=count($response);
-echo $len;
 $pages=array();
-
+$name=array();
+$page_url=array();
 
  foreach ($response as $page_detail) {
       $pages[]=$page_detail['page_id'];
+      $name[]=$page_detail['name'];
+      $page_url=$page_detail['page_url'];
+
   } 
 
   $rand_keys=array_rand($pages,30);
 
+
+$pages2=array();
+$name2=array();
+$page_url2=array();
+
   foreach ($rand_keys as $key) {
     # code...
 
-    echo $response[$key]['page_id'];
+    $pages2[]=$response[$key]['page_id'];
+    $name2[]$response[$key]['name'];
+    $page_url2[]=$response[$key]['page_id'];
+    echo "$pages2";
     echo "<br/>";
 
   }
