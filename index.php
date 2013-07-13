@@ -105,18 +105,10 @@ $page_url=array();
 
   $rand_keys=array_rand($pages,30);
 
-
-$pages2=array();
-$name2=array();
-$page_url2=array();
-
   foreach ($rand_keys as $key) {
     # code...
 
-    $pages2[]=$response[$key]['page_id'];
-    $name2[]$response[$key]['name'];
-    $page_url2[]=$response[$key]['page_id'];
-    echo "$pages2";
+    echo $response[$key]['name'];
     echo "<br/>";
 
   }
