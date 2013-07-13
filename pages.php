@@ -1,8 +1,7 @@
 <html>
 
 <?php
-$var=$_GET['id'];
-console.log($var);
+
 echo "VisializIN <br />";
 require_once("facebook.php");
 $facebook = new Facebook(array(
@@ -106,10 +105,12 @@ $page_url=array();
 
 
   $rand_keys=array_rand($name,30);
+  $rand_id=array();
  $random=array();
   foreach ($rand_keys as $key) {
     # code...
     $random[]=$response[$key]['name'];
+    $rand_id[]=$response[$key]['page_id'];
   }
   
  ?>
@@ -120,16 +121,23 @@ $page_url=array();
 <script type="text/javascript">
 
   var jArray = <?php echo json_encode($random ); ?>;
+   var pageid = <?php echo json_encode($rand_id ); ?>;
+
+  
+  pageid.length=10;
   jArray.length=10;
   for(var i=0;i<10;i++){
     console.log(jArray[i]);
+   console.log(pageid[i]);
+       
   }
 
   var user = <?php echo $user; ?>;
 
     i = 0;
     
-  
+var currentItem=0;
+var currname="";
 
 var sampleSVG = d3.select("#viz")
     .append("svg")
@@ -139,7 +147,8 @@ var sampleSVG = d3.select("#viz")
 
 
 
-function generate_circles(namelist, xcenter, ycenter, centertext){
+function generate_circles(idlist,namelist, xcenter, ycenter, centertext){
+
     dataset=[]
     for(i=0; i<namelist.length; i++){
         dataset.push(Math.round(30 + Math.random()*50));
@@ -174,6 +183,11 @@ function generate_circles(namelist, xcenter, ycenter, centertext){
             d3.select(this).style("opacity", 0.5);
             d3.select(this).attr("r", d3.select(this).attr("r")/2);
         }).on("click", function(){
+            currentItem=d3.select(this).attr("id");
+            currname=idlist[parseInt(currentItem)].toString();
+
+            console.log(currentItem);
+            console.log(currname);
             xclicked=d3.select(this).attr("cx");
             yclicked=d3.select(this).attr("cy");
             rclicked=d3.select(this).attr("r");
@@ -208,9 +222,11 @@ function generate_circles(namelist, xcenter, ycenter, centertext){
                     j++;
                 }
                 currentcircles=[];
-                generate_circles(jArray, 800, 500, "ME");
+                generate_circles(pageid,jArray, 800, 500, "ME");
                 d3.select(this).remove();   
             });
+            console.log(currname);
+            window.location.assign("pages.php?id="+currname);
         });
         
 
@@ -246,7 +262,7 @@ function generate_circles(namelist, xcenter, ycenter, centertext){
     console.log(currentcircles);
 }
 if(user)
-  generate_circles(jArray,800,500, "ME");
+  generate_circles(pageid,jArray,800,500, "ME");
     </script>
 
   </body>
