@@ -93,22 +93,27 @@ if ($user) {
 echo  $response[0]; 
 $len=count($response);
 echo $len;
+$pages=array();
 
 
  foreach ($response as $page_detail) {
-      echo $page_detail['page_id'];
+      $pages[]=$page_detail['page_id'];
   } 
 
+  $rand_keys=array_rand($pages,30);
 
-  $red = 3;
+  foreach ($rand_keys as $key) {
+    # code...
+
+    echo $key;
+    echo "<br/>";
+  }
+
  
  //echo $decoded;
  
 ?>
 
-<script type="text/javascript">
-alert(<?=$red ?>)
-</script>
 
 
 
