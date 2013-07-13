@@ -87,21 +87,21 @@ if ($user) {
       'query' => $like_query,));
 
  $decoded = print_r($response);
- echo $decoded;
+ //echo $decoded;
  
 ?>
 
  <script type="text/javascript">
 
-var str=<?php echo $decoded; ?>;
+var str= "<?php echo $decoded; ?>";
 
-document.write(str);
+console.log(str);
 
 
  </script>
 
 
-    ?>
+  
 
 
   </body>
