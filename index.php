@@ -2,7 +2,6 @@
 
 <?php
 
-echo "VisializIN <br />";
 require_once("facebook.php");
 $facebook = new Facebook(array(
   'appId'  => getenv('api_key'),
@@ -59,7 +58,6 @@ if ($user) {
       <a href="<?php echo $logoutUrl; ?>">Logout</a>
     <?php else: ?>
       <div>
-        Login using OAuth 2.0 handled by the PHP SDK:
         <a href="<?php echo $loginUrl; ?>" onclick>Login with Facebook</a>
       </div>
     <?php endif ?>
@@ -70,13 +68,11 @@ if ($user) {
 
 
     <?php if ($user): ?>
-      <h3>You</h3>
-      <img src="https://graph.facebook.com/<?php echo $user; ?>/picture">
+      <img height ="50" width ="50" src="https://graph.facebook.com/<?php echo $user; ?>/picture">
 
-      <h3>Your User Object (/me)</h3>
+      
       <pre><?php // print_r($likes); ?></pre>
     <?php else: ?>
-      <strong><em>You are not Connected.</em></strong>
     <?php endif ?>
 
 
