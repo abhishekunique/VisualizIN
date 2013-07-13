@@ -89,7 +89,7 @@ if ($user) {
 
 //$multiQuery = '{ "query1": select uid2 from friend where uid1=me()",
  //"query2":select uid from page_fan where page_id=7608631709"}';
-qry = "select uid from page_fan WHERE uid in (SELECT uid2 from #query1) and page_id=".$_GET['id'];
+$qry = "select uid from page_fan WHERE uid in (SELECT uid2 from #query1) and page_id=".$_GET['id'];
 
  $multiQuery = '{ "query1": "select uid2 FROM friend WHERE uid1=me()",
  "query2":'.$qry'.}';
