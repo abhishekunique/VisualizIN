@@ -90,10 +90,10 @@ if ($user) {
 
  print_r($response);
  echo "<br /><br /><br />";
-$decoded = json_decode($response)
+$decoded = json_decode($response);
  echo "<br /><br /><br />";
  print_r($decoded['data']);
-  $red = 3
+  $red = 3;
  
  //echo $decoded;
  
