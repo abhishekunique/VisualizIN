@@ -80,7 +80,7 @@ if ($user) {
 
 
     <?php
-    $like_query="select page_id,name, page_url from page_fan WHERE uid=me()";
+    $like_query="select page_id,name,page_url from page where page_id in(select page_id from page_fan WHERE uid=me())";
 
     $response= $facebook ->api(array(
       'method' => 'fql.query',
