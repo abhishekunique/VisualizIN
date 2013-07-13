@@ -2,7 +2,7 @@
 
 <?php
 
-echo "abc";
+echo "VisializIN <br />";
 require_once("facebook.php");
 $facebook = new Facebook(array(
   'appId'  => getenv('api_key'),
@@ -29,13 +29,13 @@ if ($user) {
 }
 
 // This call will always work since we are fetching public data.
-$naitik = $facebook->api('/me');
+$curr_user = $facebook->api('/me');
 
 ?>
 <!doctype html>
 <html xmlns:fb="http://www.facebook.com/2008/fbml">
   <head>
-    <title>php-sdk</title>
+    <title>VisualizIN</title>
     <style>
       body {
         font-family: 'Lucida Grande', Verdana, Arial, sans-serif;
@@ -50,7 +50,7 @@ $naitik = $facebook->api('/me');
     </style>
   </head>
   <body>
-    <h1>php-sdk</h1>
+    
 
     <?php if ($user): ?>
       <a href="<?php echo $logoutUrl; ?>">Logout</a>
@@ -74,9 +74,9 @@ $naitik = $facebook->api('/me');
       <strong><em>You are not Connected.</em></strong>
     <?php endif ?>
 
-    <h3>Public profile of Naitik</h3>
-    <img src="https://graph.facebook.com/naitik/picture">
-    <?php echo $naitik['name']; ?>
+    <h3>Your Public profile</h3>
+    <img src="https://graph.facebook.com/me/picture">
+    <?php echo $curr_user['name']; ?>
   </body>
 </html>
 
