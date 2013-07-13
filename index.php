@@ -58,7 +58,7 @@ if ($user) {
       <a href="<?php echo $logoutUrl; ?>">Logout</a>
     <?php else: ?>
       <div>
-        <button type="submit" href="<?php echo $loginUrl; ?>" onclick>Login with Facebook</a>
+        <a href="<?php echo $loginUrl; ?>" onclick>Login with Facebook</a>
       </div>
     <?php endif ?>
 
