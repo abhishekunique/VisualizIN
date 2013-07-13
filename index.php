@@ -129,6 +129,7 @@ $page_url=array();
     i = 0;
     
 var currentItem=0;
+var currname="";
 
 var sampleSVG = d3.select("#viz")
     .append("svg")
@@ -174,8 +175,11 @@ function generate_circles(namelist, xcenter, ycenter, centertext){
             d3.select(this).style("opacity", 0.5);
             d3.select(this).attr("r", d3.select(this).attr("r")/2);
         }).on("click", function(){
-            currentItem=d3.select(this).attr("id").toString();
+            currentItem=d3.select(this).attr("id");
+            currname=namelist[parseInt(currentItem)];
+
             console.log(currentItem);
+            console.log(currname);
             xclicked=d3.select(this).attr("cx");
             yclicked=d3.select(this).attr("cy");
             rclicked=d3.select(this).attr("r");
