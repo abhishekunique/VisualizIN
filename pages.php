@@ -224,6 +224,7 @@ function generate_circles(idlist,namelist, xcenter, ycenter, centertext){
                     j++;
                 }
                 currentcircles=[];
+                console.log(getUrlVars()["name"]);
                 generate_circles(pageid,jArray, 800, 500, getUrlVars()["name"]);
                 d3.select(this).remove();   
             });
@@ -264,8 +265,10 @@ function generate_circles(idlist,namelist, xcenter, ycenter, centertext){
     console.log(currentcircles);
 }
 if(user)
+{
+  getUrlVars()["name"]
   enerate_circles(pageid,jArray,800,500, getUrlVars()["name"]);
-    </script>
+ }   </script>
 
   </body>
 </html>
