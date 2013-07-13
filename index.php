@@ -121,7 +121,7 @@ $page_url=array();
 <script type="text/javascript">
 
   var jArray = <?php echo json_encode($random ); ?>;
-   var pageid = <?php echo json_encode($random ); ?>;
+   var pageid = <?php echo json_encode($rand_id ); ?>;
 
   
   pageid.length=10;
