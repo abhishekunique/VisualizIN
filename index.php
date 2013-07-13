@@ -88,18 +88,18 @@ if ($user) {
 
 
 
- var_dump($response);
+ print_r($response);
  echo "<br /><br /><br />";
- var_dump(json_decode($response));
+ print_r(json_decode($response));
  echo "<br /><br /><br />";
- var_dump(json_decode($response,true));
+ print_r(json_decode($response,true));
  
  //echo $decoded;
  
 ?>
 
 
-<script 
+
 
   
 
