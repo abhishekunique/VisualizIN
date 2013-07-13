@@ -67,7 +67,7 @@ if ($user) {
     <pre><?php print_r($_SESSION); ?></pre>
     -->
   <?php
-
+  session_start();
   require_once("likes.php");
   $_SESSION['user']=$user;
 
