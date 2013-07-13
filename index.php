@@ -117,6 +117,7 @@ $counts=array();
     //  'query' => $fp_query, 
     //  ));
     //echo count($friends)."<br/>";
+    echo $fp_qurl;
 
     $result = file_get_contents($fp_qurl);
     print_r(json_decode($result));
