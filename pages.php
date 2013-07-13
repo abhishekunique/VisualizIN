@@ -210,8 +210,6 @@ function generate_circles(namelist, xcenter, ycenter, centertext){
                 generate_circles(jArray, 800, 500, "ME");
                 d3.select(this).remove();   
             });
-            window.setTimeout(null,1000);
-            window.location.assign("pages.php");
         });
         
 
