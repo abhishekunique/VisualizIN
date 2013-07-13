@@ -59,7 +59,7 @@ if ($user) {
 overflow:hidden; height:600px; width:500px;" allowTransparency="true"></iframe>'
     ?>
     <?php if ($user): ?>
-      <a href="<?php echo $logoutUrl; ?>">Logout</a>
+      <!--<a href="<?php echo $logoutUrl; ?>">Logout</a>-->
     <?php else: ?>
       <div>
         Login using OAuth 2.0 handled by the PHP SDK:
