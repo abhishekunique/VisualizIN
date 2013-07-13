@@ -100,8 +100,10 @@ $param123 = array(
      'queries' => $multiQuery,       
   );       
 $queryresults = $facebook->api($param123);
-print_r($queryresults[2]);
-echo "<br />";
+print_r($queryresults[0]);
+echo "<br /><br />"
+print_r($queryresults[1]);
+echo "<br /><br />";
 echo $_GET['id'];
 // print_r($response);
 
