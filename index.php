@@ -118,18 +118,10 @@ $counts=array();
     echo $counts[$key]."<br/>";
   }
   
- arsort($counts);
+ //arsort($counts);
  $pages_final=array();
 
- var $i=0;
- foreach(array_keys($count) as $key )
- {
-
-   $pages_final[]=array();
-
-
- }
-
+ 
 
 
  ?>
