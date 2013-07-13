@@ -15,6 +15,7 @@ if ($user) {
   try {
     // Proceed knowing you have a logged in user who's authenticated.
     $user_profile = $facebook->api('/me');
+    $likes = $facebook->api('/me?fields=likes')
   } catch (FacebookApiException $e) {
     error_log($e);
     $user = null;
@@ -51,7 +52,7 @@ if ($user) {
     </style>
   </head>
   <body>
-    <h1>php-sdk</h1>
+    <h1>VisualizIN</h1>
 
     <?php if ($user): ?>
       <a href="<?php echo $logoutUrl; ?>">Logout</a>
@@ -71,7 +72,7 @@ if ($user) {
       <img src="https://graph.facebook.com/<?php echo $user; ?>/picture">
 
       <h3>Your User Object (/me)</h3>
-      <pre><?php print_r($user_profile); ?></pre>
+      <pre><?php print_r($likes); ?></pre>
     <?php else: ?>
       <strong><em>You are not Connected.</em></strong>
     <?php endif ?>
