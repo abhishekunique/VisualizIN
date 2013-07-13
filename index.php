@@ -29,13 +29,14 @@ if ($user) {
 }
 
 // This call will always work since we are fetching public data.
-$curr_user = $facebook->api('/me');
+$naitik = $facebook->api('/naitik');
 
 ?>
+
 <!doctype html>
 <html xmlns:fb="http://www.facebook.com/2008/fbml">
   <head>
-    <title>VisualizIN</title>
+    <title>php-sdk</title>
     <style>
       body {
         font-family: 'Lucida Grande', Verdana, Arial, sans-serif;
@@ -50,7 +51,7 @@ $curr_user = $facebook->api('/me');
     </style>
   </head>
   <body>
-    
+    <h1>php-sdk</h1>
 
     <?php if ($user): ?>
       <a href="<?php echo $logoutUrl; ?>">Logout</a>
@@ -74,10 +75,8 @@ $curr_user = $facebook->api('/me');
       <strong><em>You are not Connected.</em></strong>
     <?php endif ?>
 
-    <h3>Your Public profile</h3>
-    <img src="https://graph.facebook.com/me/picture">
-    <?php echo $curr_user['name']; ?>
+    <h3>Public profile of Naitik</h3>
+    <img src="https://graph.facebook.com/naitik/picture">
+    <?php echo $naitik['name']; ?>
   </body>
 </html>
-
-
