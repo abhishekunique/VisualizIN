@@ -226,10 +226,10 @@ function generate_circles(namelist, xcenter, ycenter, centertext){
     httpc.open("GET", url, true); // sending as POST
     httpc.send(curname);
 } */
-        window.setTimeout(null,1000);
+        /*window.setTimeout(null,1000);
         console.log(curname);
         var url="pages.php?id="+str;
-         window.location.assign(url);
+         window.location.assign(url);*/
             
         });
         
