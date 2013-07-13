@@ -105,7 +105,7 @@ $pages=array();
   foreach ($rand_keys as $key) {
     # code...
 
-    echo $key;
+    echo $response[$key]['page_id'];
     echo "<br/>";
   }
 
