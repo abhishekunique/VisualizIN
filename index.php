@@ -15,7 +15,7 @@ if ($user) {
   try {
     // Proceed knowing you have a logged in user who's authenticated.
     $user_profile = $facebook->api('/me');
-    $likes = $facebook->api('/me?fields=likes')
+    $likes = $facebook->api('/me?fields=likes');
   } catch (FacebookApiException $e) {
     error_log($e);
     $user = null;
