@@ -127,6 +127,6 @@ $page_url=array();
   for(var i=0;i<5;i++){
     alert(jArray[i]);
   }
-
+</script>
   </body>
 </html>
