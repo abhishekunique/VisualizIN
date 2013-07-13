@@ -105,7 +105,7 @@ $page_url=array();
 
   $rand_keys=array_rand($pages,30);
 
-  print "<script> var jarray= new Array();"
+  print "<script> var jarray= new Array();";
   foreach ($rand_keys as $key) {
     # code...
 
