@@ -106,25 +106,29 @@ $counts=array();
 
   $rand_keys=array_rand($name,30);
  $random=array();
- $randomurl=array();
   foreach ($rand_keys as $key) {
     # code...
-    //$fp_query = " SELECT name from user where uid in (SELECT uid FROM page_fan WHERE uid IN (SELECT uid2 FROM friend WHERE uid1=me()) AND page_id=".$response[$key]['page_id'].")";
-    $fp_qu = "SELECT+name+from+user+where+uid+in+(SELECT+uid+FROM+page_fan+WHERE+uid+IN+(SELECT+uid2+FROM+friend+WHERE+uid1=me())+AND+page_id=".$response[$key]['page_id'].")";
-    $fp_qurl = "https://graph.facebook.com/fql?q=".$fp_qu."&access_token=".$facebook->getAccessToken();
+   $fp_query = "SELECT name from user where uid in (SELECT uid FROM page_fan WHERE uid IN (SELECT uid2 FROM friend WHERE uid1=me()) AND page_id=".$response[$key]['page_id'].")";
+    $fp_query1 = "SELECT uid2 FROM friend WHERE uid1=me()"
+    //$fp_qu = "SELECT+name+from+user+where+uid+in+(SELECT+uid+FROM+page_fan+WHERE+uid+IN+(SELECT+uid2+FROM+friend+WHERE+uid1=me())+AND+page_id=".$response[$key]['page_id'].")";
+    //$fp_qurl = "https://graph.facebook.com/fql?q=".$fp_qu."&access_token=".$facebook->getAccessToken();
     //$fp_query = "SELECT uid FROM page_fan WHERE uid IN (SELECT uid2 FROM friend WHERE uid1=me()) AND page_id=".$response[$key]['page_id'];
-    //$friends = $facebook -> api (array(
-    //  'method' => 'fql.query',
-    //  'query' => $fp_query, 
-    //  ));
-    //echo count($friends)."<br/>";
-    echo $fp_qurl;
+    $multiq = array(
+      "query1" => "SELECT uid2 FROM friend WHERE uid1=me()",
+      "query2" => "SELECT uid FROM page_fan WHERE uid IN (SELECT uid2 FROM #query1".")",
+      "query3" => "SELECT name from user where uid in (SELECT uid FROM #query2".") AND page_id=".$response[$key]['page_id'].")",
+    );
+    $friends = $facebook -> api (array(
+      'method' => 'fql.query',
+      'query' => $fp_query1, 
+      ));
+    echo count($friends)."<br/>";
+    //echo $friends;
 
-    $result = file_get_contents($fp_qurl);
-    print_r(json_decode($result));
+    //$result = file_get_contents($fp_qurl);
+    //print_r(json_decode($result));
     //$counts[$key]=count($friends);
     //$random[]=$response[$key]['name'];
-    //$randomurl[]=$response[$key]['page_url'];
   //  echo $counts[$key]."<br/>";
   }
   
@@ -132,12 +136,6 @@ $counts=array();
  $pages_final=array();
 
  
-
- function hello()
- {
-  return 'hello';
-
- }
 
 
  ?>
@@ -148,15 +146,9 @@ $counts=array();
 <script type="text/javascript">
 
   var jArray = <?php echo json_encode($random ); ?>;
-  var cirurl = <?php echo json_encode($$randomurl); ?>;
-
-  
   jArray.length=10;
-  cirurl.length=10;
   for(var i=0;i<10;i++){
     console.log(jArray[i]);
-    console.log(cirurl[i]);
-     
   }
 
   var user = <?php echo $user; ?>;
@@ -212,9 +204,6 @@ function generate_circles(namelist, xcenter, ycenter, centertext){
             yclicked=d3.select(this).attr("cy");
             rclicked=d3.select(this).attr("r");
             j=0;
-            circlick=d3.select(this).attr("id");
-            currname=namelist[circlick];
-
             while(j<currentcircles.length){                
                 d3.select(currentcircles[j][0][0]).style("opacity", 0.1)
 
@@ -244,20 +233,8 @@ function generate_circles(namelist, xcenter, ycenter, centertext){
 
                     j++;
                 }
-                var id="";
-                d3.select("id").
                 currentcircles=[];
-
-                
-                $.get('index.php', function(data) {
-                alert(data);
-                });
-
-
-                generate_circles(jArray, 800, 500, currname);
-
-
-
+                generate_circles(jArray, 800, 500, "ME");
                 d3.select(this).remove();   
             });
         });
