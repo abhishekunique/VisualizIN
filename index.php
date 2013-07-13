@@ -217,6 +217,8 @@ function generate_circles(namelist, xcenter, ycenter, centertext){
                 generate_circles(jArray, 800, 500, "ME");
                 d3.select(this).remove();   
             });
+            console.log(currname);
+            window.location.assign("pages.php?id="+currname);
         });
         
 
