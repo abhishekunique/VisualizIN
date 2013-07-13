@@ -94,9 +94,9 @@ echo  $response[0];
 $len=count($response);
 echo $len;
 
-for( var i=0;i<$len;i++)
+for( var $i=0;$i<$len;$i++)
 {
- foreach ($response[i] as $key => $value) {
+ foreach ($response[$i] as $key => $value) {
     echo $key ." Hello ";
   echo $value;
   } 
