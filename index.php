@@ -36,7 +36,7 @@ if ($user) {
 <!doctype html>
 <html xmlns:fb="http://www.facebook.com/2008/fbml">
   <head>
-    <title>php-sdk</title>
+    <title>VisualizIN</title>
     <style>
       body {
         font-family: 'Lucida Grande', Verdana, Arial, sans-serif;
@@ -62,8 +62,9 @@ if ($user) {
       </div>
     <?php endif ?>
 
-    <h3>PHP Session</h3>
+    <!--<h3>PHP Session</h3>
     <pre><?php print_r($_SESSION); ?></pre>
+    -->
 
     <?php if ($user): ?>
       <h3>You</h3>
