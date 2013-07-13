@@ -96,7 +96,7 @@ echo $len;
 
 
  foreach ($response as $page_detail) {
-      echo page_detail['page_id'];
+      echo $page_detail['page_id'];
   } 
 
 
