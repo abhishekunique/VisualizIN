@@ -141,7 +141,7 @@ var sampleSVG = d3.select("#viz")
 
 
 function generate_circles(namelist, xcenter, ycenter, centertext){
-    
+    console.log(namelist);
     dataset=[]
     for(i=0; i<namelist.length; i++){
         dataset.push(Math.round(30 + Math.random()*50));
