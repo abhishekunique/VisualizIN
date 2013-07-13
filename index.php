@@ -128,7 +128,7 @@ $page_url=array();
 
     i = 0;
     
-  
+var currentItem=0;
 
 var sampleSVG = d3.select("#viz")
     .append("svg")
@@ -139,6 +139,7 @@ var sampleSVG = d3.select("#viz")
 
 
 function generate_circles(namelist, xcenter, ycenter, centertext){
+
     dataset=[]
     for(i=0; i<namelist.length; i++){
         dataset.push(Math.round(30 + Math.random()*50));
@@ -173,6 +174,8 @@ function generate_circles(namelist, xcenter, ycenter, centertext){
             d3.select(this).style("opacity", 0.5);
             d3.select(this).attr("r", d3.select(this).attr("r")/2);
         }).on("click", function(){
+            currentItem=d3.select(this).attr("id").toString();
+            console.log(currentItem);
             xclicked=d3.select(this).attr("cx");
             yclicked=d3.select(this).attr("cy");
             rclicked=d3.select(this).attr("r");
