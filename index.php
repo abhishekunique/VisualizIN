@@ -135,13 +135,13 @@ $counts=array();
       }
     } 
     echo $fuid;
-    $fp_query2 = "SELECT uid FROM page_fan WHERE uid IN (".$fuid.")";
+    /*$fp_query2 = "SELECT uid FROM page_fan WHERE uid IN (".$fuid.")";
     $pagefans = $facebook -> api (array(
       'method' => 'fql.query',
       'query' => $fp_query2, 
       ));
     echo count($pagefans);
-    
+    */
     //$result = file_get_contents($fp_qurl);
     //print_r(json_decode($result));
     //$counts[$key]=count($friends);
