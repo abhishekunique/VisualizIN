@@ -1,11 +1,13 @@
 <html>
-<head></head>
 
+
+<!doctype html>
+<html xmlns:fb="http://www.facebook.com/2008/fbml">
 <body>
 <?php
 
-$user=$_POST['user'];
-$likes=$_POST['likes'];
+$user=$_SESSION['user'];
+$likes=$_SESSION['likes'];
 
 echo $user;
 echo $likes;

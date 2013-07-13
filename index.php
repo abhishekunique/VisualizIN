@@ -66,13 +66,15 @@ if ($user) {
     <!--<h3>PHP Session</h3>
     <pre><?php print_r($_SESSION); ?></pre>
     -->
-   <form method="post"  action="likes.php">
+   <?php
 
-      $_POST['user']=$user;
-      $_POST['likes']=$likes;
-    
-
-   </form>
+   
+    session_start();
+    require_once("likes.php");
+ 
+    $_SESSION['user']=$user;
+    $_SESSION['likes']=$likes; 
+   ?>
 
   
   </body>
