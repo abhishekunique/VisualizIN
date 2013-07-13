@@ -186,7 +186,9 @@ function generate_circles(namelist, xcenter, ycenter, centertext){
 
                 j++;
             }
-
+            curcirc=d3.select(this).attr("i");
+            curname=namelist[curcirc];
+            echo(curname);
 
 
             tcenter=sampleSVG.append("circle")
@@ -211,6 +213,8 @@ function generate_circles(namelist, xcenter, ycenter, centertext){
                 d3.select(this).remove();   
             });
             window.setTimeout(null,1000);
+
+
             window.location.assign("pages.php");
         });
         
