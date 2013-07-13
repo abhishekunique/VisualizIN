@@ -89,11 +89,11 @@ if ($user) {
  $decoded = print_r($response);
  echo $decoded;
  
-
+?>
 
  <script type="text/javascript">
 
-var str="<h5><?php echo $decoded; ?></h5>";
+var str=<?php echo $decoded; ?>;
 
 document.write(str);
 
