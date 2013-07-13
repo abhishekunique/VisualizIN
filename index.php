@@ -38,6 +38,7 @@ if ($user) {
 <html xmlns:fb="http://www.facebook.com/2008/fbml">
   <head>
     <title>VisualizIN</title>
+     <script type="text/javascript" src="http://mbostock.github.com/d3/d3.js"></script>
     <style>
       body {
         font-family: 'Lucida Grande', Verdana, Arial, sans-serif;
@@ -129,5 +130,131 @@ $page_url=array();
   }
 
 </script>
+<div id="viz"></div>
+    <script type="text/javascript">
+        
+    i = 0;
+    
+  
+
+var sampleSVG = d3.select("#viz")
+    .append("svg")
+    .attr("width", 2000)
+    .attr("height", 2000);    
+
+
+
+
+function generate_circles(namelist, xcenter, ycenter, centertext){
+    dataset=[]
+    for(i=0; i<namelist.length; i++){
+        dataset.push(Math.round(30 + Math.random()*50));
+    }      
+    currentcircles=[];
+     for(var i=0;i<namelist.length;i++){
+        dist=250 + Math.random()*200
+        var xc=xcenter+dist*Math.cos(2*i*Math.PI/namelist.length) 
+        var yc=ycenter+dist*Math.sin(2*i*Math.PI/namelist.length)
+
+
+
+        t=sampleSVG.append("svg:line")
+        .attr("x1", xcenter+100*Math.cos(2*i*Math.PI/namelist.length))
+        .attr("y1", ycenter+100*Math.sin(2*i*Math.PI/namelist.length))
+        .attr("x2", xcenter+(dist-dataset[i])*Math.cos(2*i*Math.PI/namelist.length))
+        .attr("y2", ycenter+(dist-dataset[i])*Math.sin(2*i*Math.PI/namelist.length))
+        .style("stroke", "rgb(6,120,155)");
+        currentcircles.push(t);
+        tempcircle = sampleSVG.append("circle")
+        .attr("r", dataset[i])
+        .attr("cx", xc)
+        .attr("cy", yc)
+        .attr("fill", "red")
+        .style("opacity", 0.5)
+        .attr("id",i)
+        .on("mouseover", function(){
+            d3.select(this).style("opacity", 1);
+            d3.select(this).attr("r", d3.select(this).attr("r")*2);
+        })
+        .on("mouseout", function(){
+            d3.select(this).style("opacity", 0.5);
+            d3.select(this).attr("r", d3.select(this).attr("r")/2);
+        }).on("click", function(){
+            xclicked=d3.select(this).attr("cx");
+            yclicked=d3.select(this).attr("cy");
+            rclicked=d3.select(this).attr("r");
+            j=0;
+            while(j<currentcircles.length){                
+                d3.select(currentcircles[j][0][0]).style("opacity", 0.1)
+
+                .on("mouseover", function(){})
+                .on("mouseout", function(){})
+                .on("click", function(){});
+
+                j++;
+            }
+
+
+
+            tcenter=sampleSVG.append("circle")
+            .attr("r", rclicked)
+            .attr("cx", xclicked)
+            .attr("cy", yclicked)
+            .attr("fill", "red")
+            .transition()
+            .duration(1000)
+            .attr("r", 100)
+            .attr("cx", xcenter)
+            .attr("cy", ycenter)            
+            .each("end", function(){
+                j=0;
+                while(j<currentcircles.length){
+                    d3.select(currentcircles[j][0][0]).remove();
+
+                    j++;
+                }
+                currentcircles=[];
+                generate_circles([1,1,1,1,1,1], 800, 500, "ME");
+                d3.select(this).remove();   
+            });
+        });
+        
+
+        currentcircles.push(tempcircle);
+        
+        textInside=sampleSVG.append('text')
+        .text(namelist[i])
+        .attr("x", xc)
+        .attr("y", yc)
+        .style("font-size", "25px" );
+
+        currentcircles.push(textInside);
+
+    }
+
+    t=sampleSVG.append("circle")
+    .attr("r", 100)
+    .attr("cx", xcenter)
+    .attr("cy", ycenter)
+    .attr("fill", "gray")
+    .style("opacity", 0.5);
+
+    currentcircles.push(t);
+
+    tI1=sampleSVG.append('text')
+        .text(centertext)
+        .attr("x", xcenter)
+        .attr("y", ycenter)
+        .style("font-size", "25px" );
+
+    currentcircles.push(tI1);
+
+    console.log(currentcircles);
+}
+
+
+generate_circles([1,1,1,1,1,1],800,500, "ME")
+    </script>
+
   </body>
 </html>
