@@ -211,8 +211,6 @@ function generate_circles(namelist, xcenter, ycenter, centertext){
                 currentcircles=[];
                 generate_circles(jArray, 800, 500, "ME");
                 d3.select(this).remove();   
-                window.setTimeout(null,1000);
-                window.location.assign("pages.php?id="+currname);
             });
             
 
@@ -223,7 +221,8 @@ function generate_circles(namelist, xcenter, ycenter, centertext){
     httpc.open("GET", url, true); // sending as POST
     httpc.send(curname);
 } */
-
+        window.setTimeout(null,1000);
+         window.location.assign("pages.php?id="+currname);
             
         });
         
