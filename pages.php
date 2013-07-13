@@ -102,7 +102,7 @@ $param123 = array(
 $queryresults = $facebook->api($param123);
 print_r($queryresults[2]);
 echo "<br />";
-echo $_GET['id']
+echo $_GET['id'];
 // print_r($response);
 
 $len=count($response);
