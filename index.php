@@ -108,7 +108,7 @@ $counts=array();
  $random=array();
   foreach ($rand_keys as $key) {
     # code...
-    //$fp_query = " SELECT name from user where uid in (SELECT uid FROM page_fan WHERE uid IN (SELECT uid2 FROM friend WHERE uid1=me()) AND page_id=".$response[$key]['page_id'].")";
+   $fp_query = "SELECT name from user where uid in (SELECT uid FROM page_fan WHERE uid IN (SELECT uid2 FROM friend WHERE uid1=me()) AND page_id=".$response[$key]['page_id'].")";
     //$fp_qu = "SELECT+name+from+user+where+uid+in+(SELECT+uid+FROM+page_fan+WHERE+uid+IN+(SELECT+uid2+FROM+friend+WHERE+uid1=me())+AND+page_id=".$response[$key]['page_id'].")";
     //$fp_qurl = "https://graph.facebook.com/fql?q=".$fp_qu."&access_token=".$facebook->getAccessToken();
     //$fp_query = "SELECT uid FROM page_fan WHERE uid IN (SELECT uid2 FROM friend WHERE uid1=me()) AND page_id=".$response[$key]['page_id'];
@@ -118,11 +118,11 @@ $counts=array();
       "query3" => "SELECT name from user where uid in (SELECT uid FROM #query2".") AND page_id=".$response[$key]['page_id'].")",
     );
     $friends = $facebook -> api (array(
-      'method' => 'fql.multiquery',
-      'query' => $multiq, 
+      'method' => 'fql.query',
+      'query' => $fp_query, 
       ));
-    //echo count($friends)."<br/>";
-    echo $friends;
+    echo count($friends)."<br/>";
+    //echo $friends;
 
     //$result = file_get_contents($fp_qurl);
     //print_r(json_decode($result));
