@@ -73,7 +73,7 @@ overflow:hidden; height:600px; width:1000px;" allowTransparency="true"></iframe>
 
 
     <?php if ($user): ?>
-      <img width="100" height ="100" src="https://graph.facebook.com/<?php echo $user; ?>/picture">
+      <img width="100" height ="100" style="position:absolute;left:1000px;right:200px;" src="https://graph.facebook.com/<?php echo $user; ?>/picture">
       
       <pre><?php // print_r($likes); ?></pre>
     <?php else: ?>
