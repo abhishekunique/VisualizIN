@@ -115,7 +115,9 @@ $page_url=array();
     //echo "<br/>";
 
   }
+  print ' alert(jarray.length)';
   print '</script>';
+
 
  ?>
 
