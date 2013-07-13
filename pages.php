@@ -251,9 +251,9 @@ function generate_circles(idlist,namelist, xcenter, ycenter, centertext){
         
         textInside=sampleSVG.append('text')
         .text(namelist[i])
-        .attr("x", xc)
+        .attr("x", xc-30)
         .attr("y", yc)
-        .style("font-size", "25px" );
+        .style("font-size", "15spx" );
 
         currentcircles.push(textInside);
 
