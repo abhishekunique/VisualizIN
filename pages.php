@@ -54,7 +54,7 @@ if ($user) {
   </head>
   <body>
     <h1>VisualizIN</h1>
-
+    <div class="fb-facepile" data-href="http://facebook.com/FacebookDevelopers" data-app-id="40796308305" data-max-rows="100" data-width="300"></div>
     <?php if ($user): ?>
       <a href="<?php echo $logoutUrl; ?>">Logout</a>
     <?php else: ?>
