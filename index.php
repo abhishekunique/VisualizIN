@@ -102,31 +102,21 @@ $page_url=array();
 
   } 
 
-  ?>
-
-
-<script>
-
-jarray= new Array();
-
-<?php
 
   $rand_keys=array_rand($pages,30);
 
   foreach ($rand_keys as $key) {
     # code...
 
-    print "jarray.push($pages[$key]);";
-    $response[$key]['name'];
+    print "<script>";
+    print 'var jsArray = ['.$pages[$key].']';
+    print '</script>';
     $response[$key]['page_url'];
     //echo "<br/>";
 
   }
-?>
 
-alert(jarray.length);
-</script>
- 
+ ?>
 
 
 
