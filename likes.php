@@ -4,9 +4,8 @@
 <body>
 <?php
 
-session_start();
-$user=$_SESSION['user'];
-$likes=$_SESSION['likes'];
+$user=$_POST['user'];
+$likes=$_POST['likes'];
 
 echo $user;
 echo $likes;
