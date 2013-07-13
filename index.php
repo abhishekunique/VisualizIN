@@ -87,7 +87,7 @@ if ($user) {
       'query' => $like_query,));
 
 
-    echo $response;
+    print_r($response);
 
     ?>
 
