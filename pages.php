@@ -267,7 +267,7 @@ function generate_circles(idlist,namelist, xcenter, ycenter, centertext){
 if(user)
 {
   getUrlVars()["name"]
-  enerate_circles(pageid,jArray,800,500, getUrlVars()["name"]);
+  generate_circles(pageid,jArray,800,500, getUrlVars()["name"]);
  }  
 function getUrlVars() {
     var vars = {};
