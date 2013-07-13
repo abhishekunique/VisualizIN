@@ -98,7 +98,7 @@ $param123 = array(
      'queries' => $multiQuery,       
   );       
 $queryresults = $facebook->api($param123);
-echo $queryresults;
+print_r($queryresults['uid']);
 // print_r($response);
 
 $len=count($response);
