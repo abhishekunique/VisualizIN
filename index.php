@@ -88,11 +88,11 @@ if ($user) {
 
 
 
- print_r($response);
+// print_r($response);
  echo "<br /><br /><br />";
-$decoded = json_decode($response);
+echo  $response[0];
  echo "<br /><br /><br />";
- print_r($decoded['data']);
+echo $response[0][0];
   $red = 3;
  
  //echo $decoded;
