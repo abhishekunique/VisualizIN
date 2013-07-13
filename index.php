@@ -109,7 +109,7 @@ $counts=array();
   foreach ($rand_keys as $key) {
     # code...
     //$fp_query = " SELECT name from user where uid in (SELECT uid FROM page_fan WHERE uid IN (SELECT uid2 FROM friend WHERE uid1=me()) AND page_id=".$response[$key]['page_id'].")";
-    $fp_query = "SELECT uid FROM page_fan WHERE uid IN (SELECT uid2 FROM friend WHERE uid1=me()) AND page_id=".$response[$key]['page_id'];
+    $fp_query = "SELECT uid2 FROM friend WHERE uid1=me();
     $friends = $facebook -> api (array(
       'method' => 'fql.query',
       'query' => $fp_query, 
