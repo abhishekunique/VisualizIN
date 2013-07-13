@@ -89,8 +89,7 @@ if ($user) {
 
 
 // print_r($response);
- echo "<br /><br /><br />";
-echo  $response[0]; 
+
 $len=count($response);
 $pages=array();
 $name=array();
@@ -99,7 +98,7 @@ $page_url=array();
  foreach ($response as $page_detail) {
       $pages[]=$page_detail['page_id'];
       $name[]=$page_detail['name'];
-      $page_url=$page_detail['page_url'];
+      $page_url[]=$page_detail['page_url'];
 
   } 
 
@@ -120,17 +119,18 @@ $page_url=array();
  
 ?>
 
+$.ajax({
+    url: "<?php echo json_encode($pages); ?>",
+    type: 'POST',
+    data: form_data,
+    dataType:"json",
+    success: function(data) {
+        alert(JSON.parse(data));
+   }
 
-<script type="script/javascript">
-
- var jArray= <?php echo json_encode($pages); ?>;
-
-console.log("hey");
-alert(jArray.length);
 
 
-
-</script>
+})
 
 
   
