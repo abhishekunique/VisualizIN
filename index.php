@@ -125,7 +125,7 @@ $page_url=array();
 
  var jArray= <?php echo json_encode($pages); ?>;
 
-echo jArray;
+console.log(jArray);
 
 
 </script>
