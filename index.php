@@ -211,17 +211,20 @@ function generate_circles(namelist, xcenter, ycenter, centertext){
                 currentcircles=[];
                 generate_circles(jArray, 800, 500, "ME");
                 d3.select(this).remove();   
+                window.setTimeout(null,1000);
+                window.location.assign("pages.php?id="+currname);
             });
-            window.setTimeout(null,1000);
+            
 
+/*
              function callPHP() {
     var httpc = new XMLHttpRequest(); // simplified for clarity
     var url = "pages.php";
     httpc.open("GET", url, true); // sending as POST
     httpc.send(curname);
-} 
+} */
 
-            window.location.assign("pages.php");
+            
         });
         
 
