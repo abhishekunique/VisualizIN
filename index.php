@@ -127,7 +127,7 @@ $counts=array();
     $fuid = "";
     $i=0;
     foreach ($friends as $fr) {
-      $fuid = $fuid.$fr['uid2']
+      $fuid = $fuid.$fr['uid2'];
       $i++;
       if($i<count($friends))
       {
@@ -135,13 +135,13 @@ $counts=array();
       }
     } 
     echo $fuid;
-    //$fp_query2 = "SELECT uid FROM page_fan WHERE uid IN (".$fuid.")";
-    /*$pagefans = $facebook -> api (array(
+    $fp_query2 = "SELECT uid FROM page_fan WHERE uid IN (".$fuid.")";
+    $pagefans = $facebook -> api (array(
       'method' => 'fql.query',
       'query' => $fp_query2, 
       ));
     echo count($pagefans);
-    */
+    
     //$result = file_get_contents($fp_qurl);
     //print_r(json_decode($result));
     //$counts[$key]=count($friends);
