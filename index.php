@@ -222,7 +222,7 @@ function generate_circles(namelist, xcenter, ycenter, centertext){
     httpc.send(curname);
 } */
         window.setTimeout(null,1000);
-        var url="pages.php?id="+"2332";
+        var url="pages.php?id="+curname.toString();
          window.location.assign(url);
             
         });
