@@ -93,12 +93,15 @@ if ($user) {
 $decoded = json_decode($response)
  echo "<br /><br /><br />";
  print_r($decoded['data']);
-  
+  $red = 3
  
  //echo $decoded;
  
 ?>
 
+<script type="text/javascript">
+alert(<?=$red ?>)
+</script>
 
 
 
