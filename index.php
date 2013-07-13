@@ -95,7 +95,7 @@ $len=count($response);
 $pages=array();
 $name=array();
 $page_url=array();
-$counts=array();
+
  foreach ($response as $page_detail) {
       $pages[]=$page_detail['page_id'];
       $name[]=$page_detail['name'];
@@ -108,53 +108,9 @@ $counts=array();
  $random=array();
   foreach ($rand_keys as $key) {
     # code...
-   /*$fp_query = "SELECT name from user where uid in (SELECT uid FROM page_fan WHERE uid IN (SELECT uid2 FROM friend WHERE uid1=me()) AND page_id=".$response[$key]['page_id'].")";
-    $fp_query1 = "SELECT uid2 FROM friend WHERE uid1=me()";
-    //$fp_qu = "SELECT+name+from+user+where+uid+in+(SELECT+uid+FROM+page_fan+WHERE+uid+IN+(SELECT+uid2+FROM+friend+WHERE+uid1=me())+AND+page_id=".$response[$key]['page_id'].")";
-    //$fp_qurl = "https://graph.facebook.com/fql?q=".$fp_qu."&access_token=".$facebook->getAccessToken();
-    //$fp_query = "SELECT uid FROM page_fan WHERE uid IN (SELECT uid2 FROM friend WHERE uid1=me()) AND page_id=".$response[$key]['page_id'];
-    $multiq = array(
-      "query1" => "SELECT uid2 FROM friend WHERE uid1=me()",
-      "query2" => "SELECT uid FROM page_fan WHERE uid IN (SELECT uid2 FROM #query1".")",
-      "query3" => "SELECT name from user where uid in (SELECT uid FROM #query2".") AND page_id=".$response[$key]['page_id'].")",
-    );
-    $friends = $facebook -> api (array(
-      'method' => 'fql.query',
-      'query' => $fp_query1, 
-      ));
-    //echo count($friends)."<br/>";
-    //echo $friends;
-    $fuid = "";
-    $i=0;
-    foreach ($friends as $fr) {
-      $fuid = $fuid.$fr['uid2'];
-      $i++;
-      if($i<count($friends))
-      {
-        $fuid = $fuid.",";
-      }
-    } 
-    //echo $fuid;
-    $fp_query2 = "SELECT uid FROM page_fan WHERE uid IN (".$fuid.")";
-    $pagefans = $facebook -> api (array(
-      'method' => 'fql.query',
-      'query' => $fp_query2, 
-      ));
-    echo $pagefans;*/
-    
-    //$result = file_get_contents($fp_qurl);
-    //print_r(json_decode($result));
-    //$counts[$key]=count($friends);
-    random[]=$response[$key]['name'];
-  //  echo $counts[$key]."<br/>";
+    $random[]=$response[$key]['name'];
   }
   
- //arsort($counts);
- $pages_final=array();
-
- 
-
-
  ?>
 
 
