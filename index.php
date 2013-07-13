@@ -104,15 +104,21 @@ $page_url=array();
   } 
 
 
-  $rand_keys=array_rand($pages,30);
-
-
-
+  $rand_keys=array_rand($name,30);
+ $random=array();
+  foreach ($rand_keys as $key) {
+    # code...
+    $random[]=$response[$key]['name'];
+  }
+  
  ?>
+
+
+
 <div id="viz"></div>
 <script type="text/javascript">
 
-  var jArray = <?php echo json_encode($name ); ?>;
+  var jArray = <?php echo json_encode($random ); ?>;
   jArray.length=10;
   for(var i=0;i<10;i++){
     console.log(jArray[i]);
