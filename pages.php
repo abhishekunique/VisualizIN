@@ -92,12 +92,12 @@ if ($user) {
 
  $multiQuery = '{ "query1": "select uid2 FROM friend WHERE uid1=me()",
  "query2":"select uid,page_id from page_fan WHERE uid in (SELECT uid2 from #query1)"}';
-/*
-$param = array(       
+
+$param123 = array(       
      'method' => 'fql.multiquery',       
      'queries' => $multiQuery,       
-     'callback' => '');       
-$queryresults = $facebook->api($param);
+  );       
+$queryresults = $facebook->api($param123);
 echo $queryresults;
 // print_r($response);
 */
