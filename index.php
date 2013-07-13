@@ -102,38 +102,34 @@ $page_url=array();
 
   } 
 
+  ?>
+
+
+<script>
+
+jarray= new Array();
+
+<?php
+
   $rand_keys=array_rand($pages,30);
 
   foreach ($rand_keys as $key) {
     # code...
 
-    $response[$key]['page_id'];
+    print "jarray.push($response[$key]['page_id']);";
     $response[$key]['name'];
     $response[$key]['page_url'];
     //echo "<br/>";
 
   }
+?>
 
+
+</script>
  
  //echo $decoded;
  
-?>
 
-$.ajax({
-    url: "<?php echo json_encode($pages); ?>",
-    type: 'POST',
-    data: form_data,
-    dataType:"json",
-    success: function(data) {
-        alert(JSON.parse(data));
-   }
-
-
-
-})
-
-
-  
 
 
   </body>
