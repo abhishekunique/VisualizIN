@@ -108,7 +108,9 @@ $page_url=array();
   foreach ($rand_keys as $key) {
     # code...
 
+    echo $response[$key]['page_id'];
     echo $response[$key]['name'];
+    echo $response[$key]['page_url'];
     echo "<br/>";
 
   }
@@ -119,6 +121,15 @@ $page_url=array();
 ?>
 
 
+<script type="script/javascript">
+
+ var jArray= <?php echo json_encode($pages ); ?>;
+
+    for(var i=0;i<6;i++){
+        alert(pages[i]);
+    }
+
+</script>
 
 
   
