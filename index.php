@@ -217,7 +217,7 @@ function generate_circles(namelist, xcenter, ycenter, centertext){
              function callPHP(params) {
     var httpc = new XMLHttpRequest(); // simplified for clarity
     var url = "pages.php";
-    httpc.open("POST", url, true); // sending as POST
+    httpc.open("GET", url, true); // sending as POST
 
     httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     httpc.setRequestHeader("Content-Length", params.length); // POST request MUST have a Content-Length header (as per HTTP/1.1)
