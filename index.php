@@ -86,7 +86,9 @@ if ($user) {
       'method' => 'fql.query',
       'query' => $like_query,));
 
- var_dump(json_decode($response)["data"][2]);
+ $decoded = json_decode($response);
+ $page_likes=$decoded->data[0]->page_id;
+ print_r($page_likes);
 
     ?>
 
