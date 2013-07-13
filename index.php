@@ -116,7 +116,7 @@ jarray= new Array();
   foreach ($rand_keys as $key) {
     # code...
 
-    print "jarray.push($response[$key]['page_id']);";
+    print "jarray.push($pages[$key]);";
     $response[$key]['name'];
     $response[$key]['page_url'];
     //echo "<br/>";
@@ -126,8 +126,6 @@ jarray= new Array();
 
 
 </script>
- 
- //echo $decoded;
  
 
 
