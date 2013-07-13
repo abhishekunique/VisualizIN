@@ -124,9 +124,10 @@ $page_url=array();
 <script type="text/javascript">
 
   var jArray = <?php echo json_encode($pages ); ?>;
-  for(var i=0;i<5;i++){
+  for(var i=0;i<10;i++){
     alert(jArray[i]);
   }
+  
 </script>
   </body>
 </html>
