@@ -95,9 +95,8 @@ $len=count($response);
 echo $len;
 
 
- foreach ($response as $key => $value) {
-    echo $key;
-  echo $value;
+ foreach ($response as $page_detail) {
+      echo page_detail['page_id'];
   } 
 
 
