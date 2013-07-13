@@ -29,7 +29,7 @@ if ($user) {
 }
 
 // This call will always work since we are fetching public data.
-$naitik = $facebook->api('/me');
+//$naitik = $facebook->api('/me');
 
 ?>
 
@@ -75,8 +75,5 @@ $naitik = $facebook->api('/me');
       <strong><em>You are not Connected.</em></strong>
     <?php endif ?>
 
-    <h3>Public profile of Naitik</h3>
-    <img src="https://graph.facebook.com/naitik/picture">
-    <?php echo $naitik['name']; ?>
   </body>
 </html>
