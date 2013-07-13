@@ -97,7 +97,7 @@ echo $len;
 for( var $i=0;$i<$len;$i++)
 {
  foreach ($response[$i] as $key => $value) {
-    echo $key ." Hello ";
+    echo $key;
   echo $value;
   } 
 }
