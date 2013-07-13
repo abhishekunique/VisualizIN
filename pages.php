@@ -87,8 +87,15 @@ if ($user) {
       'method' => 'fql.query',
       'query' => $like_query,));
 
+$multiQuery = '{ "select uid2 from friend where uid1=me()",
+ "select uid from page_fan where page_id=7608631709"}';
 
-
+$param = array(       
+     'method' => 'fql.multiquery',       
+     'queries' => $multiQuery,       
+     'callback' => '');       
+$queryresults = $facebook->api($param);
+echo $queryresults;
 // print_r($response);
 
 $len=count($response);
