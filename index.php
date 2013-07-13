@@ -93,7 +93,7 @@ if ($user) {
 
  <script type="text/javascript">
 
-var str= "<?php echo $decoded; ?>";
+var str= "<?php echo $decoded ?>";
 
 console.log(str);
 
