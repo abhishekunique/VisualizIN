@@ -67,13 +67,22 @@ if ($user) {
     <pre><?php print_r($_SESSION); ?></pre>
     -->
    <?php
+
     require_once("likes.php");
     session_start();
     $_SESSION['user']=$user;
-    $_SESSION['likes']=$likes;
-
+    $_SESSION['likes']=$likes; 
    ?>
 
+    <?php if ($user): ?>
+      <h3>You</h3>
+      <img src="https://graph.facebook.com/<?php echo $user; ?>/picture">
+
+      <h3>Your User Object (/me)</h3>
+      <pre><?php print_r($likes); ?></pre>
+    <?php else: ?>
+      <strong><em>You are not Connected.</em></strong>
+    <?php endif ?>
 
   </body>
 </html>

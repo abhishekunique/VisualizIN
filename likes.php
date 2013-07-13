@@ -3,6 +3,7 @@
 
 <body>
 <?php
+
 session_start();
 $user=$_SESSION['user'];
 $likes=$_SESSION['likes'];
@@ -22,10 +23,10 @@ echo $likes;
       <strong><em>You are not Connected.</em></strong>
     <?php endif ?>
 
-</body>
+
 
 ?>
-
+</body>
 </html>
 
 
