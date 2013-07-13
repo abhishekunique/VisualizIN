@@ -98,7 +98,8 @@ $param123 = array(
      'queries' => $multiQuery,       
   );       
 $queryresults = $facebook->api($param123);
-print_r($queryresults['uid']);
+print_r($queryresults[0);
+echo "<br />"
 // print_r($response);
 
 $len=count($response);
@@ -132,7 +133,7 @@ $page_url=array();
 
   var jArray = <?php echo json_encode($random ); ?>;
    var pageid = <?php echo json_encode($rand_id ); ?>;
-
+var need4log = <?php echo json_encode($queryresults ); ?>;
   
   pageid.length=10;
   jArray.length=10;
@@ -141,7 +142,7 @@ $page_url=array();
    console.log(pageid[i]);
        
   }
-
+console.log(need4log);
   var user = <?php echo $user; ?>;
 
     i = 0;
