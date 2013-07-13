@@ -54,10 +54,9 @@ if ($user) {
   </head>
   <body>
     <h1>VisualizIN</h1>
-    
     <?php
      echo '<iframe src="http://www.facebook.com/plugins/fan.php?connections=100&id='.$_GET['id'].'" scrolling="no" frameborder="0" style="border:none; 
-overflow:hidden; height:800px; width:1000px;" allowTransparency="true"></iframe>'
+overflow:hidden; height:600px; width:500px;" allowTransparency="true"></iframe>'
     ?>
     <?php if ($user): ?>
       <a href="<?php echo $logoutUrl; ?>">Logout</a>
@@ -72,9 +71,9 @@ overflow:hidden; height:800px; width:1000px;" allowTransparency="true"></iframe>
     <pre><?php print_r($_SESSION); ?></pre>
     -->
 
-<?php if ($user): ?>
+
+    <?php if ($user): ?>
       <img width="100" height ="100" src="https://graph.facebook.com/<?php echo $user; ?>/picture">
-    
       
       <pre><?php // print_r($likes); ?></pre>
     <?php else: ?>
