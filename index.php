@@ -110,7 +110,7 @@ $page_url=array();
   foreach ($rand_keys as $key) {
     # code...
     $random[]=$response[$key]['name'];
-    $rand_id[]=$response[$key]['pages'];
+    $rand_id[]=$response[$key]['page_id'];
   }
   
  ?>
@@ -184,7 +184,7 @@ function generate_circles(idlist,namelist, xcenter, ycenter, centertext){
             d3.select(this).attr("r", d3.select(this).attr("r")/2);
         }).on("click", function(){
             currentItem=d3.select(this).attr("id");
-            currname=idlist[parseInt(currentItem)];
+            currname=idlist[parseInt(currentItem)].toString();
 
             console.log(currentItem);
             console.log(currname);
