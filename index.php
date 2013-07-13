@@ -124,7 +124,7 @@ jarray= new Array();
   }
 ?>
 
-
+alert(jarray.length);
 </script>
  
 
