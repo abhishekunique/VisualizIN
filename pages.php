@@ -55,10 +55,7 @@ if ($user) {
   <body>
     <h1>VisualizIN</h1>
     <iframe src="http://www.facebook.com/plugins/fan.php?connections=100&id=40796308305" scrolling="no" frameborder="0" style="border:none; 
-overflow:hidden; width:200px;" allowTransparency="true"></iframe>
-
-
-    <div class="fb-facepile" data-href="http://facebook.com/FacebookDevelopers" data-app-id="40796308305" data-max-rows="100" data-width="300"></div>
+overflow:hidden; width:500px;" allowTransparency="true"></iframe>
     <?php if ($user): ?>
       <a href="<?php echo $logoutUrl; ?>">Logout</a>
     <?php else: ?>
