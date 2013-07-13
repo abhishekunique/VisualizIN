@@ -92,8 +92,8 @@ if ($user) {
 
 
  $multiQuery = '{ "query1": "select uid2 FROM friend WHERE uid1=me()",
- "query2":"select uid from page_fan WHERE uid in (SELECT uid2 from #query1)",
-"query3":"select name from user where uid in (select uid from #query2) and page_id='.$_GET['id'].'"}';
+ "query2":"select uid from page_fan WHERE uid in (SELECT uid2 from #query1) and page_id='.$_GET['id'].'"}';
+//"query3":"select name from user where uid in (select uid from #query2)"}';
 
 $param123 = array(       
      'method' => 'fql.multiquery',       
