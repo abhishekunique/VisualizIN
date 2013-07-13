@@ -66,12 +66,7 @@ if ($user) {
     <!--<h3>PHP Session</h3>
     <pre><?php print_r($_SESSION); ?></pre>
     -->
-  <?php
-  session_start();
-  require_once("likes.php");
-  $_SESSION['user']=$user;
-  $_SESSION['likes']=$likes;
-  ?>
+
 
     <?php if ($user): ?>
       <h3>You</h3>
@@ -82,6 +77,8 @@ if ($user) {
     <?php else: ?>
       <strong><em>You are not Connected.</em></strong>
     <?php endif ?>
+
+
 
   </body>
 </html>
