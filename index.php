@@ -140,7 +140,7 @@ $counts=array();
       'method' => 'fql.query',
       'query' => $fp_query2, 
       ));
-    //echo count($pagefans);
+    echo $pagefans;
     
     //$result = file_get_contents($fp_qurl);
     //print_r(json_decode($result));
