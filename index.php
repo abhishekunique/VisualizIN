@@ -94,7 +94,7 @@ echo  $response[0];
  echo "<br /><br /><br />";
 foreach( $response[0] as $key => $value)
 {
-  echo $key;
+  echo $value;
 }
   $red = 3;
  
