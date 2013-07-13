@@ -92,7 +92,10 @@ if ($user) {
  echo "<br /><br /><br />";
 echo  $response[0];
  echo "<br /><br /><br />";
-echo $response[0][0];
+forreach( $response[0] as $key => $value)
+{
+  echo $key;
+}
   $red = 3;
  
  //echo $decoded;
