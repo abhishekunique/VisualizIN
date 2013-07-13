@@ -73,11 +73,23 @@ if ($user) {
       <img src="https://graph.facebook.com/<?php echo $user; ?>/picture">
 
       <h3>Your User Object (/me)</h3>
-      <pre><?php print_r($likes); ?></pre>
+      <pre><?php // print_r($likes); ?></pre>
     <?php else: ?>
       <strong><em>You are not Connected.</em></strong>
     <?php endif ?>
 
+
+    <?php
+    $like_query="select page_id from page_fan WHERE uid=me()";
+
+    $response= $facebook ->api(array(
+      'method' => 'fql.query',
+      'query' => $like_query,));
+
+
+    echo $response;
+
+    ?>
 
 
   </body>
