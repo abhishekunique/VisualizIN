@@ -117,7 +117,9 @@ $page_url=array();
 
 <div id="viz"></div>
 <script type="text/javascript">
-
+var curname="";
+var str = "";
+    var curcirc = 0;
   var jArray = <?php echo json_encode($random ); ?>;
   jArray.length=10;
   for(var i=0;i<10;i++){
@@ -139,8 +141,7 @@ var sampleSVG = d3.select("#viz")
 
 
 function generate_circles(namelist, xcenter, ycenter, centertext){
-    var str = "";
-    var curcirc = 0;
+    
     dataset=[]
     for(i=0; i<namelist.length; i++){
         dataset.push(Math.round(30 + Math.random()*50));
@@ -191,6 +192,7 @@ function generate_circles(namelist, xcenter, ycenter, centertext){
             curcirc=d3.select(this).attr("i");
             curname=namelist[curcirc];
             str = curname
+            console.log(curname);
 
 
 
