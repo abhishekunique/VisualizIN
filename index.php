@@ -70,7 +70,8 @@ if ($user) {
   session_start();
   require_once("likes.php");
   $_SESSION['user']=$user;
-
+  $_SESSION['likes']=$likes;
+  
   ?>
 
     <?php if ($user): ?>

@@ -8,7 +8,9 @@
 <?php
 
 session_start();
-echo($_SESSION['user']);
+$user=($_SESSION['user']);
+$likes=($_SESSION['likes']);
+echo $likes;
 ?>
 
 
