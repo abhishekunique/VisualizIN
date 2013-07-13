@@ -100,7 +100,7 @@ $param123 = array(
 $queryresults = $facebook->api($param123);
 echo $queryresults;
 // print_r($response);
-*/
+
 $len=count($response);
 $pages=array();
 $name=array();
