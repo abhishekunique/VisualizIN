@@ -226,7 +226,7 @@ function generate_circles(idlist,namelist, xcenter, ycenter, centertext){
                 d3.select(this).remove();   
             });
             console.log(currname);
-            window.location.assign("pages.php?id="+currid+"name="+encodeURIComponent(currname));
+            window.location.assign("pages.php?id="+currid+"&name="+encodeURIComponent(currname));
         });
         
 

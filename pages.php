@@ -224,11 +224,11 @@ function generate_circles(idlist,namelist, xcenter, ycenter, centertext){
                     j++;
                 }
                 currentcircles=[];
-                generate_circles(pageid,jArray, 800, 500, getUrlVars()["name"]);
+                generate_circles(pageid,jArray, 800, 500, decodeURIComponent(getUrlVars()["name"]));
                 d3.select(this).remove();   
             });
             console.log(currname);
-            window.location.assign("pages.php?id="+currid+"name="+encodeURIComponent(currname));
+            window.location.assign("pages.php?id="+currid+"&name="+encodeURIComponent(currname));
         });
         
 
@@ -264,7 +264,7 @@ function generate_circles(idlist,namelist, xcenter, ycenter, centertext){
     console.log(currentcircles);
 }
 if(user)
-  generate_circles(pageid,jArray,800,500, getUrlVars()["name"]);
+  generate_circles(pageid,jArray,800,500, decodeURIComponent(getUrlVars()["name"]);
     </script>
 
   </body>
