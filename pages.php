@@ -2,7 +2,7 @@
 
 <?php
 
-echo "VisializIN <br />";
+
 require_once("facebook.php");
 $facebook = new Facebook(array(
   'appId'  => getenv('api_key'),
@@ -71,12 +71,10 @@ if ($user) {
 
     <?php if ($user): ?>
       <h3>You</h3>
-      <img src="https://graph.facebook.com/<?php echo $user; ?>/picture">
+      <img width="100" height ="100" src="https://graph.facebook.com/<?php echo $user; ?>/picture">
 
-      <h3>Your User Object (/me)</h3>
       <pre><?php // print_r($likes); ?></pre>
     <?php else: ?>
-      <strong><em>You are not Connected.</em></strong>
     <?php endif ?>
 
 
@@ -98,11 +96,6 @@ $param123 = array(
      'queries' => $multiQuery,       
   );       
 $queryresults = $facebook->api($param123);
-print_r($queryresults[0]);
-echo "<br /><br />";
-print_r($queryresults[1]);
-echo "<br /><br />";
-echo $_GET['id'];
 // print_r($response);
 
 $len=count($response);

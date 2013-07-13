@@ -58,7 +58,7 @@ if ($user) {
       <a href="<?php echo $logoutUrl; ?>">Logout</a>
     <?php else: ?>
       <div>
-        <a href="<?php echo $loginUrl; ?>" onclick>Login with Facebook</a>
+        <button type="submit" href="<?php echo $loginUrl; ?>" onclick>Login with Facebook</a>
       </div>
     <?php endif ?>
 
@@ -68,7 +68,7 @@ if ($user) {
 
 
     <?php if ($user): ?>
-      <img height ="50" width ="50" src="https://graph.facebook.com/<?php echo $user; ?>/picture">
+      <img width="100" height ="100" src="https://graph.facebook.com/<?php echo $user; ?>/picture">
 
       
       <pre><?php // print_r($likes); ?></pre>
