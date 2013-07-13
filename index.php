@@ -188,7 +188,7 @@ function generate_circles(namelist, xcenter, ycenter, centertext){
             }
             curcirc=d3.select(this).attr("id");
             curname=namelist[curcirc];
-            alert(curcirc);
+            alert(curname);
 
 
             tcenter=sampleSVG.append("circle")
