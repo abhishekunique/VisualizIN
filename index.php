@@ -106,25 +106,13 @@ $page_url=array();
 
   $rand_keys=array_rand($pages,30);
 
-  print "<script> var jarray= new Array();";
-  foreach ($rand_keys as $key) {
-    # code...
-
-    print 'jarray.push(['.$pages[$key].'])';
-    
-    $response[$key]['page_url'];
-    //echo "<br/>";
-
-  }
-  print ' alert(jarray.length)';
-  print '</script>';
 
 
  ?>
 <div id="viz"></div>
 <script type="text/javascript">
 
-  var jArray = <?php echo json_encode($pages ); ?>;
+  var jArray = <?php echo json_encode($name ); ?>;
   jArray.length=10;
   for(var i=0;i<10;i++){
     console.log(jArray[i]);
